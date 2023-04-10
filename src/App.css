@@ -1,0 +1,141 @@
+* {
+	margin: 0;
+	box-sizing: border-box;
+	padding: 0;
+  color: rgb(252, 245, 229);
+/* 	overflow: hidden; */
+}
+body {
+  width: 100%;
+  background: #45411D;
+}
+.ff-small {
+  font-size: 0.8rem;
+}
+.f-variables {
+  font-size: 0.6rem;
+}
+.btn {
+   display: inline-block;
+  text-decoration: none;
+  background: transparent;
+  padding: 0.2em;
+  cursor: pointer;
+  outline: 2px solid rgb(252, 245, 229);
+}
+@media screen and (min-width: 500px) {
+  .ff-small {
+    font-size: 1rem;
+  }
+  .f-variables {
+    font-size: 0.8rem;
+}
+}
+@media screen and (min-width: 800px) {
+  .ff-small {
+    font-size: 1.2rem;
+  }
+  .f-variables {
+   font-size: 1rem;
+}
+}
+@media screen and (min-width: 1000px) {
+  .ff-small {
+    font-size: 1.4rem;
+  }
+  .f-variables {
+    font-size: 1.2rem;
+}
+}
+#container {
+  width: 100%;
+  min-height: 100vh;
+ 
+  display: grid;
+  grid-template-columns: 15% 85%;
+  grid-template-rows: 10% 10% 80%;
+  grid-template-areas: 
+    ". form"
+    ". nav"
+    "variables plots";
+  gap: 1em;
+  grid-column-gap: 0;
+}
+#load-data {
+  grid-area: form;
+  display: flex;
+  width: 100%;
+  padding-bottom: 0.3em;
+  border-bottom: 1px solid rgb(255, 255, 240);
+} 
+#load-data form {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  max-height: 60px;
+}
+#load-data input {
+  display: inline-block;
+  width: 60%;
+  border-radius: 3px;
+  outline: 2px solid black;
+  padding: 0.3em 0.5em;
+  color: black;
+  margin-right: 0.3em;
+}
+
+
+#variables {
+  grid-area: variables; 
+  padding-left: 0.2em;
+  border-right: 1px solid rgb(255, 255, 240);
+  word-wrap: break-word;
+}
+#variables h5 {
+  text-decoration: underline;
+}
+#variables div + h5 {
+  margin-top: 1em;
+}
+#variables button {
+  outline: none;
+  display: block;
+  padding: 0.1em;
+  border: none;
+  margin-top: 1em;
+}
+
+.plot {
+  grid-area: plots;
+  display: grid;
+  place-items: center;
+}
+#navigation {
+  grid-area: nav;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 1rem;
+  padding-bottom: 0.3em;
+  border-bottom: 1px solid rgb(255, 255, 240);
+}
+#navigation button {
+  padding: 0.1em;
+  cursor: pointer;
+  margin-left: 0;
+  max-height: 50px;
+}
+#chosen-vars button {
+  outline: none;
+  display: block;
+  padding: 0.1em;
+  border: none;
+  margin-top: 1em;
+}
+.bar {
+  fill: red;
+}
+.y_label, .x_label {
+  z-index: 100;
+  color: white;
+}
